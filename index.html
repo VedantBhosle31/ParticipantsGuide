@@ -1,687 +1,1002 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Participants guide</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="47b604f0-b882-4c0b-a6a6-7da9f94fdc12" class="page mono"><header><img class="page-cover-image" src="https://t4.ftcdn.net/jpg/02/18/89/83/360_F_218898398_wnLuoR9GY4qhLB2tc7o3tSJbQCRfq0xc.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧑🏽‍💻</span></div><h1 class="page-title">Participants guide</h1><p class="page-description"></p></header><div class="page-body"><p id="b686ec76-b624-4f2a-8579-c049c2b5b85f" class="">
-</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="02dda810-e186-4a82-bc03-1e7bbf90d32d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Get out of your Lazy Zone <p id="65d50d21-65c7-4f98-9662-8c4407bd1360" class="">Participate in Webops Hackathon</p><p id="12fa5da4-c7ba-4ea9-8b39-533cdcd7cf19" class="">and the Pizza Party is ON!!</p></div></figure><pre id="528d760a-e212-4a03-bb85-61dc8eaf1bc1" class="code code-wrap"><code>const Hackathon = async () =&gt; (
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Participants guide</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="47b604f0-b882-4c0b-a6a6-7da9f94fdc12" class="page mono">
+		<header><img class="page-cover-image"
+				src="https://t4.ftcdn.net/jpg/02/18/89/83/360_F_218898398_wnLuoR9GY4qhLB2tc7o3tSJbQCRfq0xc.jpg"
+				style="object-position:center 50%" />
+			<div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧑🏽‍💻</span></div>
+			<h1 class="page-title">Participants guide</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="b686ec76-b624-4f2a-8579-c049c2b5b85f" class="">
+			</p>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="02dda810-e186-4a82-bc03-1e7bbf90d32d">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Get out of your Lazy Zone <p id="65d50d21-65c7-4f98-9662-8c4407bd1360" class="">
+						Participate in Webops Hackathon</p>
+					<p id="12fa5da4-c7ba-4ea9-8b39-533cdcd7cf19" class="">and the Pizza Party is ON!!</p>
+				</div>
+			</figure>
+			<pre id="528d760a-e212-4a03-bb85-61dc8eaf1bc1" class="code code-wrap"><code>const Hackathon = async () =&gt; (
     await lazyZone(&quot;Getting out&quot;);
     await particiation();
     await PizzaParty(&quot;Go&quot;);
-)</code></pre><h1 id="830cd099-4432-476f-9219-18ca1b9a37e1" class="">WHATS THIS?</h1><p id="a0afd89c-e616-43fd-8f65-15a93203fef2" class="">A hackathon……..</p><p id="d639f15b-872c-4d16-9450-1321ea50069e" class="">No sleep (something we’re used to </p><h3 id="49df7ac4-112e-40de-8eb6-de26362cd590" class="">Whatsapp Group</h3><div id="fb52d5cc-7117-48b7-a445-1e006ae6a781" class="column-list"><div id="7c1b575f-fbdb-4bcc-a8c0-8ab0633ec495" style="width:50%" class="column"><figure id="d16e3064-f793-4e10-840c-ef5195906d03"><a href="https://chat.whatsapp.com/DoFJghBw0kmGIZhsyExn4q" class="block-color-gray_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Techsoc | Webops Hackathon</div><div class="bookmark-description">WhatsApp Group Invite</div></div><div class="bookmark-href"><img src="https://static.whatsapp.net/rsrc.php/v3/yz/r/ujTY9i_Jhs1.png" class="icon bookmark-icon"/>https://chat.whatsapp.com/DoFJghBw0kmGIZhsyExn4q</div></div><img src="https://static.whatsapp.net/rsrc.php/v3/yo/r/J5gK5AgJ_L5.png" class="bookmark-image"/></a></figure><h3 id="0e7b125a-e570-43c8-92d0-20ad4ba4ce73" class="">Registration Form</h3><figure id="4624e533-1796-4173-adaa-f25a111fe253"><a href="https://forms.gle/NXTukw49NbESQ6Yc9" class="block-color-gray_background bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://forms.gle/NXTukw49NbESQ6Yc9</div></div></a></figure><p id="5c442b70-a593-4708-8fa7-9c44bc8b5081" class="">
-</p></div><div id="5cdf5c47-4af5-4741-acdf-0ca1dda43f40" style="width:50%" class="column"><figure id="ceb4ae2e-4d70-491f-9b4a-dfd8da691510"><div class="source"><a href="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/VID20220904001201.mp4">https://prod-files-secure.s3.us-west-2.amazonaws.com/d0fd13ee-4be2-41fc-a52a-7b304e2d332b/a4d173f3-cae4-46ad-8305-ea2da674cbc8/VID20220904001201.mp4</a></div></figure></div></div><hr id="0b361603-a941-48a1-9caf-30080789fde7"/><h3 id="db0e645e-2d24-4a3c-8925-6c6da099bf6e" class="block-color-red_background">Rules!!</h3><ol type="1" id="18e24474-c47f-42c6-9daf-ca82651c36c8" class="numbered-list" start="1"><li>Being a team event, participants  in a team can be from same  or different hostels(  Prefer same hostel for IHC )</li></ol><ol type="1" id="7881f907-0ec1-4e46-b136-87a0974eeb77" class="numbered-list" start="2"><li>Maximum team size is 3</li></ol><ol type="1" id="67f7b23a-7afa-412a-947a-d63b9016078e" class="block-color-blue_background numbered-list" start="3"><li><strong><strong><strong><strong>Timing: </strong></strong></strong></strong>9th September 11 AM to 10th September 11 AM (Yes, including the night!)</li></ol><ol type="1" id="7dc2f6ef-f10a-46e6-9061-b7dbb65e3ba0" class="block-color-blue_background numbered-list" start="4"><li><strong><strong><strong><strong><strong><strong><strong><strong>Venue: </strong></strong></strong></strong></strong></strong></strong></strong>CRC 101 and 102</li></ol><ol type="1" id="686f3427-695e-4a3f-aada-fe7f2fe8f747" class="numbered-list" start="5"><li>Write your application in ‘code’. This is strictly a coding hackathon and therefore no-code submissions aren’t allowed</li></ol><ol type="1" id="39d908b1-c723-445d-b98a-37c25eee2b5a" class="numbered-list" start="6"><li>No, you can&#x27;t come just for the pizzas!!. We keep professional records to find infiltrators. 🕵🏽</li></ol><ol type="1" id="becbf5b2-bb38-4c00-937d-26c5edd24cde" class="numbered-list" start="7"><li>Problem statements and the Marking Scheme will only be announced at the venue at 11 AM.</li></ol><ol type="1" id="1fc39dba-6a20-49ee-8492-170a1ad7394a" class="numbered-list" start="8"><li>Bring your own extension cables if you wish to survive the whole 24 hours.</li></ol><p id="3ebce326-84c1-47c9-b266-06077f93cb21" class="">
-</p><hr id="ceb2339e-cf85-4242-9e11-6a2e8725e29c"/><pre id="da1c64d9-9678-4881-ab03-34934d612dff" class="code"><code>&quot;Food &amp; FUN &quot;== &quot;Antidote for Boredom(sleep?)&quot;</code></pre><div id="17af1760-6ca3-4f6c-b9fa-899d2e484322" class="column-list"><div id="99ac2e04-73fd-4082-be66-06f1a17a9527" style="width:50%" class="column"><table id="33621aab-6a99-46a2-a23b-25ee57f6b59b" class="simple-table"><thead class="simple-table-header"><tr id="2337fd98-aefb-42eb-bb67-3e6773d40934"><th id="al}r" class="block-color-orange_background simple-table-header" style="width:150px">Time</th><th id="=CaE" class="block-color-orange_background simple-table-header" style="width:160px">Food</th><th id=";tGE" class="block-color-orange_background simple-table-header" style="width:199px">Activity</th></tr></thead><tbody><tr id="4a82197d-73c4-4ceb-940d-c35628c48e71"><td id="al}r" class="" style="width:150px">12PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Snacks(Chips)</td><td id=";tGE" class="" style="width:199px"></td></tr><tr id="42a87ec8-1118-4fd6-aa51-b0bb556ae18a"><td id="al}r" class="" style="width:150px">3PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Samosa/Tea☕</td><td id=";tGE" class="" style="width:199px">Guess the movie</td></tr><tr id="67ff8d83-28a1-4b4f-ab69-c769307d8bae"><td id="al}r" class="" style="width:150px">5PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Chocolates🍫</td><td id=";tGE" class="" style="width:199px"></td></tr><tr id="bd684965-441e-471a-a5ff-4820b1ba0133"><td id="al}r" class="" style="width:150px">8PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Pizza🍕</td><td id=";tGE" class="" style="width:199px">Dumb Charades</td></tr><tr id="f0e64c84-012f-4b81-bd25-b033856aaef8"><td id="al}r" class="" style="width:150px">10PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Maaza</td><td id=";tGE" class="" style="width:199px"></td></tr><tr id="3f004904-938c-4251-aa09-5349e2e2b3bd"><td id="al}r" class="" style="width:150px">11PM, 9th Sept</td><td id="=CaE" class="" style="width:160px">Coffee☕</td><td id=";tGE" class="" style="width:199px">Never Have I Ever</td></tr><tr id="73f08060-68e9-497d-9c94-56de9252066e"><td id="al}r" class="" style="width:150px">3AM, 10th Sept</td><td id="=CaE" class="" style="width:160px">Sting</td><td id=";tGE" class="" style="width:199px">Quiz</td></tr><tr id="c039fddb-a495-43d5-b513-8949897cf2a9"><td id="al}r" class="" style="width:150px">7AM, 10th Sept</td><td id="=CaE" class="" style="width:160px">Coffee☕</td><td id=";tGE" class="" style="width:199px">Guess the lyrics</td></tr></tbody></table></div><div id="c1cff069-41f9-4603-b460-2c745df24732" style="width:50%" class="column"><figure id="216970b1-510c-4995-bc25-70ce0e562d0b" class="image"><a href="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/Hackathon_meme.jpg"><img style="width:480px" src="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/Hackathon_meme.jpg"/></a></figure></div></div><hr id="519c4c69-e57d-453f-b94e-054be56024dc"/><p id="c0f04c68-4cb6-469a-abc7-ed1934b185e2" class="">
-</p><h2 id="6414aff4-73ca-40d1-882c-faf9028c4eae" class="block-color-yellow_background">Doubt Busterz 🧑🏽‍🏫</h2><pre id="246d39ea-0122-4f22-8336-d445f752edf0" class="code code-wrap"><code>let solvingYourDoubt = new Promise((resolve, reject) =&gt; {
+)</code></pre>
+			<h1 id="830cd099-4432-476f-9219-18ca1b9a37e1" class="">WHATS THIS?</h1>
+			<p id="a0afd89c-e616-43fd-8f65-15a93203fef2" class="">A hackathon……..</p>
+			<p id="d639f15b-872c-4d16-9450-1321ea50069e" class="">No sleep (something we’re used to </p>
+			<h3 id="49df7ac4-112e-40de-8eb6-de26362cd590" class="">Whatsapp Group</h3>
+			<div id="fb52d5cc-7117-48b7-a445-1e006ae6a781" class="column-list">
+				<div id="7c1b575f-fbdb-4bcc-a8c0-8ab0633ec495" style="width:50%" class="column">
+					<figure id="d16e3064-f793-4e10-840c-ef5195906d03"><a
+							href="https://chat.whatsapp.com/DoFJghBw0kmGIZhsyExn4q"
+							class="block-color-gray_background bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">Techsoc | Webops Hackathon</div>
+									<div class="bookmark-description">WhatsApp Group Invite</div>
+								</div>
+								<div class="bookmark-href"><img
+										src="https://static.whatsapp.net/rsrc.php/v3/yz/r/ujTY9i_Jhs1.png"
+										class="icon bookmark-icon" />https://chat.whatsapp.com/DoFJghBw0kmGIZhsyExn4q
+								</div>
+							</div><img src="https://static.whatsapp.net/rsrc.php/v3/yo/r/J5gK5AgJ_L5.png"
+								class="bookmark-image" />
+						</a></figure>
+					<h3 id="0e7b125a-e570-43c8-92d0-20ad4ba4ce73" class="">Registration Form</h3>
+					<figure id="4624e533-1796-4173-adaa-f25a111fe253"><a href="https://forms.gle/NXTukw49NbESQ6Yc9"
+							class="block-color-gray_background bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title"></div>
+								</div>
+								<div class="bookmark-href">https://forms.gle/NXTukw49NbESQ6Yc9</div>
+							</div>
+						</a></figure>
+					<p id="5c442b70-a593-4708-8fa7-9c44bc8b5081" class="">
+					</p>
+				</div>
+				<div id="5cdf5c47-4af5-4741-acdf-0ca1dda43f40" style="width:50%" class="column">
+					<figure id="ceb4ae2e-4d70-491f-9b4a-dfd8da691510">
+						<div class="source"><a
+								href="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/VID20220904001201.mp4">https://prod-files-secure.s3.us-west-2.amazonaws.com/d0fd13ee-4be2-41fc-a52a-7b304e2d332b/a4d173f3-cae4-46ad-8305-ea2da674cbc8/VID20220904001201.mp4</a>
+						</div>
+					</figure>
+				</div>
+			</div>
+			<hr id="0b361603-a941-48a1-9caf-30080789fde7" />
+			<h3 id="db0e645e-2d24-4a3c-8925-6c6da099bf6e" class="block-color-red_background">Rules!!</h3>
+			<ol type="1" id="18e24474-c47f-42c6-9daf-ca82651c36c8" class="numbered-list" start="1">
+				<li>Being a team event, participants in a team can be from same or different hostels( Prefer same hostel
+					for IHC )</li>
+			</ol>
+			<ol type="1" id="7881f907-0ec1-4e46-b136-87a0974eeb77" class="numbered-list" start="2">
+				<li>Maximum team size is 3</li>
+			</ol>
+			<ol type="1" id="67f7b23a-7afa-412a-947a-d63b9016078e" class="block-color-blue_background numbered-list"
+				start="3">
+				<li><strong><strong><strong><strong>Timing: </strong></strong></strong></strong>9th September 11 AM to
+					10th September 11 AM (Yes, including the night!)</li>
+			</ol>
+			<ol type="1" id="7dc2f6ef-f10a-46e6-9061-b7dbb65e3ba0" class="block-color-blue_background numbered-list"
+				start="4">
+				<li><strong><strong><strong><strong><strong><strong><strong><strong>Venue:
+												</strong></strong></strong></strong></strong></strong></strong></strong>CRC
+					101 and 102</li>
+			</ol>
+			<ol type="1" id="686f3427-695e-4a3f-aada-fe7f2fe8f747" class="numbered-list" start="5">
+				<li>Write your application in ‘code’. This is strictly a coding hackathon and therefore no-code
+					submissions aren’t allowed</li>
+			</ol>
+			<ol type="1" id="39d908b1-c723-445d-b98a-37c25eee2b5a" class="numbered-list" start="6">
+				<li>No, you can&#x27;t come just for the pizzas!!. We keep professional records to find infiltrators.
+					🕵🏽</li>
+			</ol>
+			<ol type="1" id="becbf5b2-bb38-4c00-937d-26c5edd24cde" class="numbered-list" start="7">
+				<li>Problem statements and the Marking Scheme will only be announced at the venue at 11 AM.</li>
+			</ol>
+			<ol type="1" id="1fc39dba-6a20-49ee-8492-170a1ad7394a" class="numbered-list" start="8">
+				<li>Bring your own extension cables if you wish to survive the whole 24 hours.</li>
+			</ol>
+			<p id="3ebce326-84c1-47c9-b266-06077f93cb21" class="">
+			</p>
+			<hr id="ceb2339e-cf85-4242-9e11-6a2e8725e29c" />
+			<pre id="da1c64d9-9678-4881-ab03-34934d612dff"
+				class="code"><code>&quot;Food &amp; FUN &quot;== &quot;Antidote for Boredom(sleep?)&quot;</code></pre>
+			<div id="17af1760-6ca3-4f6c-b9fa-899d2e484322" class="column-list">
+				<div id="99ac2e04-73fd-4082-be66-06f1a17a9527" style="width:50%" class="column">
+					<table id="33621aab-6a99-46a2-a23b-25ee57f6b59b" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="2337fd98-aefb-42eb-bb67-3e6773d40934">
+								<th id="al}r" class="block-color-orange_background simple-table-header"
+									style="width:150px">Time</th>
+								<th id="=CaE" class="block-color-orange_background simple-table-header"
+									style="width:160px">Food</th>
+								<th id=";tGE" class="block-color-orange_background simple-table-header"
+									style="width:199px">Activity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="4a82197d-73c4-4ceb-940d-c35628c48e71">
+								<td id="al}r" class="" style="width:150px">12PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Snacks(Chips)</td>
+								<td id=";tGE" class="" style="width:199px"></td>
+							</tr>
+							<tr id="42a87ec8-1118-4fd6-aa51-b0bb556ae18a">
+								<td id="al}r" class="" style="width:150px">3PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Samosa/Tea☕</td>
+								<td id=";tGE" class="" style="width:199px">Guess the movie</td>
+							</tr>
+							<tr id="67ff8d83-28a1-4b4f-ab69-c769307d8bae">
+								<td id="al}r" class="" style="width:150px">5PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Chocolates🍫</td>
+								<td id=";tGE" class="" style="width:199px"></td>
+							</tr>
+							<tr id="bd684965-441e-471a-a5ff-4820b1ba0133">
+								<td id="al}r" class="" style="width:150px">8PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Pizza🍕</td>
+								<td id=";tGE" class="" style="width:199px">Dumb Charades</td>
+							</tr>
+							<tr id="f0e64c84-012f-4b81-bd25-b033856aaef8">
+								<td id="al}r" class="" style="width:150px">10PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Maaza</td>
+								<td id=";tGE" class="" style="width:199px"></td>
+							</tr>
+							<tr id="3f004904-938c-4251-aa09-5349e2e2b3bd">
+								<td id="al}r" class="" style="width:150px">11PM, 9th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Coffee☕</td>
+								<td id=";tGE" class="" style="width:199px">Never Have I Ever</td>
+							</tr>
+							<tr id="73f08060-68e9-497d-9c94-56de9252066e">
+								<td id="al}r" class="" style="width:150px">3AM, 10th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Sting</td>
+								<td id=";tGE" class="" style="width:199px">Quiz</td>
+							</tr>
+							<tr id="c039fddb-a495-43d5-b513-8949897cf2a9">
+								<td id="al}r" class="" style="width:150px">7AM, 10th Sept</td>
+								<td id="=CaE" class="" style="width:160px">Coffee☕</td>
+								<td id=";tGE" class="" style="width:199px">Guess the lyrics</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="c1cff069-41f9-4603-b460-2c745df24732" style="width:50%" class="column">
+					<figure id="216970b1-510c-4995-bc25-70ce0e562d0b" class="image"><a
+							href="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/Hackathon_meme.jpg"><img
+								style="width:480px"
+								src="Participants%20guide%2047b604f0b8824c0ba6a67da9f94fdc12/Hackathon_meme.jpg" /></a>
+					</figure>
+				</div>
+			</div>
+			<hr id="519c4c69-e57d-453f-b94e-054be56024dc" />
+			<p id="c0f04c68-4cb6-469a-abc7-ed1934b185e2" class="">
+			</p>
+			<h2 id="6414aff4-73ca-40d1-882c-faf9028c4eae" class="block-color-yellow_background">Doubt Busterz 🧑🏽‍🏫
+			</h2>
+			<pre id="246d39ea-0122-4f22-8336-d445f752edf0" class="code code-wrap"><code>let solvingYourDoubt = new Promise((resolve, reject) =&gt; {
   if (doubt != null) {
     resolve(&quot;Contact POC&quot;);
   }
@@ -691,11 +1006,145 @@ solvingYourDoubt
   .then(console.log(&quot;[Call Rasagnya, 6302854348]&quot;))
   .then(console.log(&quot;[Call Akshay, 6204475299]&quot;))
   .then(console.log(&quot;[Call Satwik, 9327686198]&quot;))
-  .catch(console.log(&quot;Stack Overflow it&quot;));</code></pre><p id="f014a075-3e37-4ecd-bff4-019d247da0d4" class="">
-</p><hr id="6f12448b-2e4f-4b1f-81b8-49154f8db350"/><h2 id="1b664e7f-c960-4c24-961f-442ba1c801ac" class="block-color-red_background">Problem Statements</h2><table id="4d15673b-331c-426d-ac30-3af85223f161" class="simple-table"><thead class="simple-table-header"><tr id="cb58a3da-a611-4f8d-ba53-1d57132a164c"><th id="m;b&lt;" class="simple-table-header-color simple-table-header" style="width:54px">Si</th><th id="N\;I" class="simple-table-header-color simple-table-header" style="width:876px">Problem Statement</th><th id="QQC}" class="simple-table-header-color simple-table-header">Domain</th><th id="JPuw" class="simple-table-header-color simple-table-header">Difficulty</th></tr></thead><tbody><tr id="f07a5244-3f19-4303-9859-edb68b406476"><td id="m;b&lt;" class="" style="width:54px">1.</td><td id="N\;I" class="" style="width:876px">Develop a full-stack application that addresses the need for efficient online collaboration in a remote work environment. The app should facilitate real-time communication, file sharing, task management, and team collaboration, all within a secure and user-friendly platform. The goal is to enhance productivity, streamline communication, and improve the overall remote work experience for teams of varying sizes and industries.</td><td id="QQC}" class="">Full stack dev</td><td id="JPuw" class="">Hard</td></tr><tr id="074c2460-792c-4ba4-8577-277958bab623"><td id="m;b&lt;" class="" style="width:54px">2.</td><td id="N\;I" class="" style="width:876px">Write a script to take input of blog search , tag filter , club filter and automate the process of searching for a blog in cfi website (and opening the best match)</td><td id="QQC}" class=""></td><td id="JPuw" class="">Medium</td></tr><tr id="50485919-dd4a-44be-96e7-9c76faa3c3bb"><td id="m;b&lt;" class="" style="width:54px">3.</td><td id="N\;I" class="" style="width:876px">Create a mobile app that helps users make sustainable shopping choices by providing information about the environmental impact of products and suggesting eco-friendly alternatives</td><td id="QQC}" class="">App dev</td><td id="JPuw" class="">Easy</td></tr><tr id="eb9f09f2-7d58-4426-81fe-b9e5ceca8ce3"><td id="m;b&lt;" class="" style="width:54px">4.</td><td id="N\;I" class="" style="width:876px">Create a web app for tracking and managing stock portfolios with real-time stock price updates.</td><td id="QQC}" class="">Automation</td><td id="JPuw" class="">Medium</td></tr><tr id="8e648384-fa7f-4800-8a4e-fc7a66f8a2ee"><td id="m;b&lt;" class="" style="width:54px">5.</td><td id="N\;I" class="" style="width:876px">Code a brick breaker game</td><td id="QQC}" class=""></td><td id="JPuw" class="">Easy</td></tr><tr id="5cb64c8f-8167-4ae6-b997-785e1bcfbfdf"><td id="m;b&lt;" class="" style="width:54px">6.</td><td id="N\;I" class="" style="width:876px">Implement a feature to randomly select and display 10 questions from a chosen category on individual cards with answer text fields, and then track the user&#x27;s test history and scores in the backend</td><td id="QQC}" class="">Full stack dev</td><td id="JPuw" class="">Medium</td></tr></tbody></table><p id="135a609d-90ca-4c67-9f0f-e9f5c8f5f5a9" class="">
-</p><hr id="fcadb8b1-e53d-4f9c-860c-89030e56ff5a"/><div id="4384b689-b693-4768-bcee-273673dec072" class="column-list"><div id="ab420b97-4155-4313-b19b-2d8c2854c8a6" style="width:50%" class="column"><h2 id="ac84eac8-8b5e-45c7-8947-469a7687e0c5" class="block-color-teal">Submission Guidelines</h2><p id="b0056414-4b69-463d-b4d1-95da591c67c9" class="">Submissions will be accepted through a Google Form, which should include the following:</p></div><div id="d8f277d3-cc48-4083-8fee-69e9c933ad2e" style="width:50%" class="column"><p id="62ed6a9a-5473-457a-a443-eaa7782b43f2" class="">
-</p></div></div><ul id="43350e76-e820-4137-807b-820f7c2a9df7" class="toggle"><li><details open=""><summary>Link to GitHub repository</summary><p id="0aa8bab0-4ddd-4f5c-bd7c-b59be3537548" class=""><a href="https://youtu.be/wrb7Gge9yoE?si=eX7DsLLMb-Gv307r">https://youtu.be/wrb7Gge9yoE?si=eX7DsLLMb-Gv307r</a></p></details></li></ul><ul id="be61708d-8138-4151-bb46-c6b71736c57e" class="toggle"><li><details open=""><summary>Demo video</summary><figure id="dfa7c6cc-508e-4a3b-bac0-f6990868b7a5"><div class="source"><a href="https://youtu.be/-H4d-7ncY9I?si=8Hpp_J0Bdn94t0hQ">https://youtu.be/-H4d-7ncY9I?si=8Hpp_J0Bdn94t0hQ</a></div></figure></details></li></ul><p id="8e24a122-7041-4d65-89b5-14439746f587" class="">
-</p><hr id="b03979e7-136e-4e48-a34b-3dc939dd5601"/><p id="34043158-34cb-4382-b0df-91d2816eb8c7" class="">
-</p><h2 id="83511ae6-6420-43a6-88fe-e692f86e24a2" class="block-color-yellow">Evaluation Framework</h2><ul id="98fe0b30-2afa-4ff8-917b-db5fb6c76672" class="bulleted-list"><li style="list-style-type:disc">Documentation - Detailed Readme files with setup instructions and output descriptions</li></ul><ul id="44b89b5b-e842-48d2-98c4-4e260245f3ac" class="bulleted-list"><li style="list-style-type:disc">Functionality - needs to cover all the requirements mentioned in the PS</li></ul><ul id="19dbb148-2d61-4b59-9c4e-8fc60c185a4e" class="bulleted-list"><li style="list-style-type:disc">Code - Good practices, comments, Code organization, function/variable names</li></ul><ul id="e985d196-7aff-4b2d-a16a-a3aeec0260f3" class="bulleted-list"><li style="list-style-type:disc">Demo - detailed video</li></ul><ul id="884aec25-533a-4a95-adbb-6dcaf7d3198d" class="bulleted-list"><li style="list-style-type:disc">Deployment - any service like firebase, Heroku etc. can be used</li></ul><ul id="9dd5dea9-be73-41d9-b30d-803f79b2c3ff" class="bulleted-list"><li style="list-style-type:disc">UI</li></ul><ul id="38c5bbe3-a296-4da0-bc89-25cf2bbc4157" class="bulleted-list"><li style="list-style-type:disc">Innovative features</li></ul><p id="a4192bbe-f850-4298-9265-7900cd5a929d" class="">
-</p><p id="1221e21f-a1c2-45c6-acb9-5d4f62f826e0" class="">
-</p></div></article></body></html>
+  .catch(console.log(&quot;Stack Overflow it&quot;));</code></pre>
+			<p id="f014a075-3e37-4ecd-bff4-019d247da0d4" class="">
+			</p>
+			<hr id="6f12448b-2e4f-4b1f-81b8-49154f8db350" />
+			<h2 id="1b664e7f-c960-4c24-961f-442ba1c801ac" class="block-color-red_background">Problem Statements</h2>
+			<table id="4d15673b-331c-426d-ac30-3af85223f161" class="simple-table">
+				<thead class="simple-table-header">
+					<tr id="cb58a3da-a611-4f8d-ba53-1d57132a164c">
+						<th id="m;b&lt;" class="simple-table-header-color simple-table-header" style="width:54px">Si
+						</th>
+						<th id="N\;I" class="simple-table-header-color simple-table-header" style="width:876px">Problem
+							Statement</th>
+						<th id="QQC}" class="simple-table-header-color simple-table-header">Domain</th>
+						<th id="JPuw" class="simple-table-header-color simple-table-header">Difficulty</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="f07a5244-3f19-4303-9859-edb68b406476">
+						<td id="m;b&lt;" class="" style="width:54px">1.</td>
+						<td id="N\;I" class="" style="width:876px">Develop a full-stack application that addresses the
+							need for efficient online collaboration in a remote work environment. The app should
+							facilitate real-time communication, file sharing, task management, and team collaboration,
+							all within a secure and user-friendly platform. The goal is to enhance productivity,
+							streamline communication, and improve the overall remote work experience for teams of
+							varying sizes and industries.</td>
+						<td id="QQC}" class="">Full stack dev</td>
+						<td id="JPuw" class="">Hard</td>
+					</tr>
+					<tr id="074c2460-792c-4ba4-8577-277958bab623">
+						<td id="m;b&lt;" class="" style="width:54px">2.</td>
+						<td id="N\;I" class="" style="width:876px">Write a script to take input of blog search , tag
+							filter , club filter and automate the process of searching for a blog in cfi website (and
+							opening the best match)</td>
+						<td id="QQC}" class="">Scripting</td>
+						<td id="JPuw" class="">Medium</td>
+					</tr>
+					<tr id="50485919-dd4a-44be-96e7-9c76faa3c3bb">
+						<td id="m;b&lt;" class="" style="width:54px">3.</td>
+						<td id="N\;I" class="" style="width:876px">Create a mobile app that helps users make sustainable
+							shopping choices by providing information about the environmental impact of products and
+							suggesting eco-friendly alternatives</td>
+						<td id="QQC}" class="">App dev</td>
+						<td id="JPuw" class="">Easy</td>
+					</tr>
+					<tr id="eb9f09f2-7d58-4426-81fe-b9e5ceca8ce3">
+						<td id="m;b&lt;" class="" style="width:54px">4.</td>
+						<td id="N\;I" class="" style="width:876px">Create a web app for tracking and managing stock
+							portfolios with real-time stock price updates.</td>
+						<td id="QQC}" class="">Front End</td>
+						<td id="JPuw" class="">Medium</td>
+					</tr>
+					<tr id="8e648384-fa7f-4800-8a4e-fc7a66f8a2ee">
+						<td id="m;b&lt;" class="" style="width:54px">5.</td>
+						<td id="N\;I" class="" style="width:876px">Code a brick breaker game</td>
+						<td id="QQC}" class="">Programing</td>
+						<td id="JPuw" class="">Easy</td>
+					</tr>
+					<tr id="5cb64c8f-8167-4ae6-b997-785e1bcfbfdf">
+						<td id="m;b&lt;" class="" style="width:54px">6.</td>
+						<td id="N\;I" class="" style="width:876px">Implement a feature to randomly select and display 10
+							questions from a chosen category on individual cards with answer text fields, and then track
+							the user&#x27;s test history and scores in the backend</td>
+						<td id="QQC}" class="">Full stack dev</td>
+						<td id="JPuw" class="">Medium</td>
+					</tr>
+				</tbody>
+			</table>
+			<p id="135a609d-90ca-4c67-9f0f-e9f5c8f5f5a9" class="">
+			</p>
+			<hr id="fcadb8b1-e53d-4f9c-860c-89030e56ff5a" />
+			<div id="4384b689-b693-4768-bcee-273673dec072" class="column-list">
+				<div id="ab420b97-4155-4313-b19b-2d8c2854c8a6" style="width:50%" class="column">
+					<h2 id="ac84eac8-8b5e-45c7-8947-469a7687e0c5" class="block-color-teal">Submission Guidelines</h2>
+					<p id="b0056414-4b69-463d-b4d1-95da591c67c9" class="">Submissions will be accepted through a Google
+						Form, which should include the following:</p>
+				</div>
+				<div id="d8f277d3-cc48-4083-8fee-69e9c933ad2e" style="width:50%" class="column">
+					<p id="62ed6a9a-5473-457a-a443-eaa7782b43f2" class="">
+					</p>
+				</div>
+			</div>
+			<ul id="43350e76-e820-4137-807b-820f7c2a9df7" class="toggle">
+				<li>
+					<details open="">
+						<summary>Link to GitHub repository</summary>
+						<p id="0aa8bab0-4ddd-4f5c-bd7c-b59be3537548" class=""><a
+								href="https://youtu.be/wrb7Gge9yoE?si=eX7DsLLMb-Gv307r">https://youtu.be/wrb7Gge9yoE?si=eX7DsLLMb-Gv307r</a>
+						</p>
+					</details>
+				</li>
+			</ul>
+			<ul id="be61708d-8138-4151-bb46-c6b71736c57e" class="toggle">
+				<li>
+					<details open="">
+						<summary>Demo video</summary>
+						<figure id="dfa7c6cc-508e-4a3b-bac0-f6990868b7a5">
+							<div class="source"><a
+									href="https://youtu.be/-H4d-7ncY9I?si=8Hpp_J0Bdn94t0hQ">https://youtu.be/-H4d-7ncY9I?si=8Hpp_J0Bdn94t0hQ</a>
+							</div>
+						</figure>
+					</details>
+				</li>
+			</ul>
+			<p id="8e24a122-7041-4d65-89b5-14439746f587" class="">
+			</p>
+			<hr id="b03979e7-136e-4e48-a34b-3dc939dd5601" />
+			<p id="34043158-34cb-4382-b0df-91d2816eb8c7" class="">
+			</p>
+			<h2 id="83511ae6-6420-43a6-88fe-e692f86e24a2" class="block-color-yellow">Evaluation Framework</h2>
+			<ul id="98fe0b30-2afa-4ff8-917b-db5fb6c76672" class="bulleted-list">
+				<li style="list-style-type:disc">Documentation - Detailed Readme files with setup instructions and
+					output descriptions</li>
+			</ul>
+			<ul id="44b89b5b-e842-48d2-98c4-4e260245f3ac" class="bulleted-list">
+				<li style="list-style-type:disc">Functionality - needs to cover all the requirements mentioned in the PS
+				</li>
+			</ul>
+			<ul id="19dbb148-2d61-4b59-9c4e-8fc60c185a4e" class="bulleted-list">
+				<li style="list-style-type:disc">Code - Good practices, comments, Code organization, function/variable
+					names</li>
+			</ul>
+			<ul id="e985d196-7aff-4b2d-a16a-a3aeec0260f3" class="bulleted-list">
+				<li style="list-style-type:disc">Demo - detailed video</li>
+			</ul>
+			<ul id="884aec25-533a-4a95-adbb-6dcaf7d3198d" class="bulleted-list">
+				<li style="list-style-type:disc">Deployment - any service like firebase, Heroku etc. can be used</li>
+			</ul>
+			<ul id="9dd5dea9-be73-41d9-b30d-803f79b2c3ff" class="bulleted-list">
+				<li style="list-style-type:disc">UI</li>
+			</ul>
+			<ul id="38c5bbe3-a296-4da0-bc89-25cf2bbc4157" class="bulleted-list">
+				<li style="list-style-type:disc">Innovative features</li>
+			</ul>
+			<p id="a4192bbe-f850-4298-9265-7900cd5a929d" class="">
+			</p>
+			<p id="1221e21f-a1c2-45c6-acb9-5d4f62f826e0" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
